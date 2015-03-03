@@ -1,11 +1,17 @@
 package phase1;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by Administrateur on 03/03/2015.
  */
+@Entity
+@Table
 public class Person implements Comparable,Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String name;
     private int age;
     private String address;
@@ -17,6 +23,15 @@ public class Person implements Comparable,Serializable{
         this.name = name;
         this.age = age;
         this.address = address;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
