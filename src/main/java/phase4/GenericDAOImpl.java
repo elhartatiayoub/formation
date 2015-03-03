@@ -27,6 +27,7 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
     @Override
     public T create(T t) {
         this.entityManager.persist(t);
+        System.out.println("========================================================");
         return t;
     }
 

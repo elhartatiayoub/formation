@@ -9,8 +9,7 @@
             <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="eclipselink.jdbc.user" value="root"/>
             <property name="eclipselink.jdbc.password" value="root"/>
-            <property name="ecl
-            ipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.logging.level" value="FINE"/>
             <property name="eclipselink.ddl-generation" value="create-tables"/>
         </properties>
     </persistence-unit>
