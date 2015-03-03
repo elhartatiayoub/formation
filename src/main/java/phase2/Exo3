@@ -1,0 +1,3 @@
+A JavaBean follows certain conventions. Getter/setter naming, public default constructor, serialisable
+
+A POJO is a Java object that doesn't have a requirement to implement a particular interface or derive from a particular base class,
