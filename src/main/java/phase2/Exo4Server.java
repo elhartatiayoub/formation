@@ -1,6 +1,6 @@
 package phase2;
 
-import phase1.Person;
+import model.Person;
 
 import java.io.*;
 import java.net.ServerSocket;

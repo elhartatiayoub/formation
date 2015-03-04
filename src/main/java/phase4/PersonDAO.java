@@ -1,6 +1,6 @@
 package phase4;
 
-import phase1.Person;
+import model.Person;
 
 /**
  * Created by Administrateur on 03/03/2015.

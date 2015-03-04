@@ -34,10 +34,8 @@ public class DaoFactory {
             daoList.put(daoClazz, dao);
             return dao;
         } catch (InstantiationException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (IllegalAccessException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return null;

@@ -1,28 +1,43 @@
-package phase1;
+package model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrateur on 03/03/2015.
  */
 @Entity
 @Table
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Person implements Comparable,Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private int age;
     private String address;
+    @OneToMany(fetch=FetchType.EAGER, mappedBy="parent", cascade=CascadeType.ALL)
+    private List<Child> children;
 
-    public Person() {
+    public List<Child> getChildren() {
+        return children;
     }
 
-    public Person(String name, int age, String address) {
+    public void setChildren(List<Child> children) {
+        this.children = children;
+    }
+
+    public Person() {
+        children = new ArrayList<Child>();
+    }
+
+    public Person(String name, int age, String address, List<Child> children) {
         this.name = name;
         this.age = age;
         this.address = address;
+        this.children = children;
     }
 
 
@@ -63,6 +78,8 @@ public class Person implements Comparable,Serializable{
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", address='" + address + '\'' +
+                ", children=" + children +
                 '}';
     }
 

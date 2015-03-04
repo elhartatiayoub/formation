@@ -29,7 +29,6 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
         this.entityManager.getTransaction().begin();
         this.entityManager.persist(t);
         this.entityManager.getTransaction().commit();
-        System.out.println("========================================================");
         return t;
     }
 

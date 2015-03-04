@@ -1,6 +1,6 @@
 package phase4;
 
-import phase1.Person;
+import model.Person;
 
 import javax.persistence.Query;
 import java.util.List;

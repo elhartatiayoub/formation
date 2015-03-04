@@ -1,5 +1,7 @@
 package phase1;
 
+import model.Person;
+
 import java.util.*;
 
 /**
@@ -7,9 +9,9 @@ import java.util.*;
  */
 public class Exo5 {
     public static void main(String[] args) {
-        Person p1 = new Person("iob",23,"adresse");
-        Person p2 = new Person("iob2",22,"adresse");
-        Person p3 = new Person("iob3",27,"adresse");
+        Person p1 = new Person("iob",23,"adresse", null);
+        Person p2 = new Person("iob2",22,"adresse", null);
+        Person p3 = new Person("iob3",27,"adresse", null);
         List<Person> listP;
         listP = new ArrayList<Person>();
         listP.add(p1);

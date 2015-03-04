@@ -1,8 +1,7 @@
 package phase2;
 
-import phase1.Person;
+import model.Person;
 
-import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
@@ -20,7 +19,7 @@ public class Exo4Client {
             address = InetAddress.getByName("localhost");
             connection = new Socket(address, 9898);
             ObjectOutputStream bos = new ObjectOutputStream(connection.getOutputStream());
-            Person person = new Person("iob",23,"Hello world");
+            Person person = new Person("iob",23,"Hello world", null);
             bos.writeObject(person);
             System.out.printf("object sent with success");
             bos.flush();
