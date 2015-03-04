@@ -7,9 +7,9 @@ import phase1.Person;
  */
 public class Test {
     public static void main(String[] args) {
-        PersonDAO dao = new PersonDAOImpl();
-        Person p = new Person("iob3sd",275,"adqsdxqresse");
-        dao.create(p);
+        //PersonDAO dao = new PersonDAOImpl();
+        Person p = new Person("iob123",275,"adqsdxqresse");
+        DaoFactory.getInstance().getDao(PersonDAOImpl.class).create(p);
 
     }
 

@@ -1,0 +1,6 @@
+Java Persistence API est la spécification Java de l'O.R.M.
+La spécification J.P.A est le fruit du rassemblement des travaux issus des O.R.M Java pré existants.
+Il existe de nombreuses implémentations de la couche de persistance J.P.A
+    Oracle Toplink
+    Hibernate
+    OpenJPA

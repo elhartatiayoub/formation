@@ -26,7 +26,9 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
 
     @Override
     public T create(T t) {
+        this.entityManager.getTransaction().begin();
         this.entityManager.persist(t);
+        this.entityManager.getTransaction().commit();
         System.out.println("========================================================");
         return t;
     }
@@ -38,12 +40,18 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
 
     @Override
     public T update(T t) {
-        return this.entityManager.merge(t);
+
+        this.entityManager.getTransaction().begin();
+        T obj = this.entityManager.merge(t);
+        this.entityManager.getTransaction().commit();
+        return obj;
     }
 
     @Override
     public void delete(T t) {
+        this.entityManager.getTransaction().begin();
         t = this.entityManager.merge(t);
         this.entityManager.remove(t);
+        this.entityManager.getTransaction().commit();
     }
 }
