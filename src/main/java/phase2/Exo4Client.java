@@ -19,7 +19,7 @@ public class Exo4Client {
             address = InetAddress.getByName("localhost");
             connection = new Socket(address, 9898);
             ObjectOutputStream bos = new ObjectOutputStream(connection.getOutputStream());
-            Person person = new Person("iob",23,"Hello world", null);
+            Person person = new Person("iob",23,"Hello world");
             bos.writeObject(person);
             System.out.printf("object sent with success");
             bos.flush();

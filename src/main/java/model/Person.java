@@ -11,6 +11,9 @@ import java.util.List;
 @Entity
 @Table
 @Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn(name="Disc")
+// @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Person implements Comparable,Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +23,8 @@ public class Person implements Comparable,Serializable{
     private String address;
     @OneToMany(fetch=FetchType.EAGER, mappedBy="parent", cascade=CascadeType.ALL)
     private List<Child> children;
+
+    
 
     public List<Child> getChildren() {
         return children;
@@ -33,11 +38,11 @@ public class Person implements Comparable,Serializable{
         children = new ArrayList<Child>();
     }
 
-    public Person(String name, int age, String address, List<Child> children) {
+    public Person(String name, int age, String address) {
         this.name = name;
         this.age = age;
         this.address = address;
-        this.children = children;
+        this.children = new ArrayList<Child>();
     }
 
 

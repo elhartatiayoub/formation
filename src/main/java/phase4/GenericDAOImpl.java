@@ -20,8 +20,7 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
         entityManager = emfactory.createEntityManager( );
         ParameterizedType genericSuperclass = (ParameterizedType) getClass()
                 .getGenericSuperclass();
-        this.entityClass = (Class<T>) genericSuperclass
-                .getActualTypeArguments()[0];
+        this.entityClass = (Class<T>) genericSuperclass.getActualTypeArguments()[0];
     }
 
     @Override

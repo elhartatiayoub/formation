@@ -27,7 +27,7 @@ public class Exo2 {
     }
 
     public static void main(String[] args) throws Exception {
-        Person person = new Person("iob",23,"Hello world", null); // The original object
+        Person person = new Person("iob",23,"Hello world"); // The original object
         byte[] personBytes = Exo2.serialize(person); // Serialize
         person = (Person) Exo2.deserialize(personBytes); // Deserialize
         System.out.println(person); // Good as new !

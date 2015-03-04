@@ -18,9 +18,9 @@ public class CreateWithJPA {
         EntityManager entitymanager = emfactory.createEntityManager( );
         entitymanager.getTransaction( ).begin( );
 
-        Person p1 = new Person("iob",23,"adresse", null);
-        Person p2 = new Person("iob2",22,"adresse", null);
-        Person p3 = new Person("iob3",27,"adresse", null);
+        Person p1 = new Person("iob",23,"adresse");
+        Person p2 = new Person("iob2",22,"adresse");
+        Person p3 = new Person("iob3",27,"adresse");
 
         entitymanager.persist( p1 );
         entitymanager.persist( p2 );
